@@ -22,18 +22,57 @@ class Wagon {
 
     join(Traveler) {
         if (this.capacity > this.passengersList.length) {
+            // creates and adds an image of a travler to the dom
             this.passengersList.push(Traveler)
+            const passengerImg = document.createElement('img')
+            passengerImg.setAttribute('src', './assets/images/passenger.jpg')
+            passengerImg.setAttribute('width', '100')
+            mainElement.append(passengerImg)
+
+            const passengerInfo = document.createElement('button')
+            passengerInfo.append(Traveler.name)
+            mainElement.append(passengerInfo)
+
+
+            passengerInfo.addEventListener('click', function () {
+                alert(Traveler.name + ' has ' + Traveler.food + ' food remaing and is healthy: ' + Traveler.isHealthy)
+            })
+
+
+            // creats and adds buttons eat and hunt to the page
+            const goEat = document.createElement('button')
+            goEat.append('Eat')
+            const goHunt = document.createElement('button')
+            goHunt.append('Hunt')
+
+            mainElement.append(goHunt)
+            mainElement.append(goEat)
+
+
+            // add eventlistentener to make travlers hunt and eat
+            goHunt.addEventListener('click', function () {
+                Traveler.hunt()
+            })
+            goEat.addEventListener('click', function () {
+                Traveler.eat()
+            })
         }
 
     }
 
     shouldQuarantine() {
-        if (Traveler.isHealthy === false) {
-            return false
+        let quarentine = false
+        for (let index = 0; index < this.passengersList.length; index += 1) {
+            let passengers = this.passengersList[index]
+            if (passengers.isHealthy === false) {
+                quarentine = true
+                break
+            }
+            else {
+                quarentine = false
+            }
         }
-        else {
-            return true
-        }
+        return quarentine
     }
 
     totalFood() {
@@ -45,3 +84,4 @@ class Wagon {
         return foodTotal
     }
 }
+

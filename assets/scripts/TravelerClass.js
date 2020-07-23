@@ -16,4 +16,5 @@ class Traveler {
             this.isHealthy = false
         }
     }
+
 }

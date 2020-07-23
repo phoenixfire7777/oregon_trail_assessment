@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    background-color: blue;
+}
+
+button{
+    display: flexbox;
+    background-color: burlywood;
+}

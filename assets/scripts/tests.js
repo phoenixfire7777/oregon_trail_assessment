@@ -10,8 +10,8 @@ wagon.join(juan)
 wagon.join(maude)  // There is no room for her!
 console.log(`Wagon Seat Count?: ${wagon.getAvailableSeatCount()} – EXPECTED: 0 – There is no room for Maude, but Juan was able to join.`)
 henrietta.hunt()   // Henrietta goes in search of food.
-juan.eat()         // Juan eats – as Juan does. 🤣
-juan.eat()         // Juan has run out of food!
-console.log(juan)
-console.log(`Wagon Should Quarantine?: ${wagon.shouldQuarantine()} – EXPECTED: true. Juan has run out of food and become unhealthy!`)
-console.log(`Wagon's Total Food?: ${wagon.totalFood()} – EXPECTED: 3.`)
+// juan.eat()         // Juan eats – as Juan does. 🤣
+// juan.eat()         // Juan has run out of food!
+// console.log(juan)
+// console.log(`Wagon Should Quarantine?: ${wagon.shouldQuarantine()} – EXPECTED: true. Juan has run out of food and become unhealthy!`)
+// console.log(`Wagon's Total Food?: ${wagon.totalFood()} – EXPECTED: 3.`)
